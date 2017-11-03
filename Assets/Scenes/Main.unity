@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -212,9 +212,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2402687, y: 0}
+  m_Offset: {x: 0.2402687, y: 0.47651052}
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 12.28872
 --- !u!1 &599679309
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,8 +224,8 @@ GameObject:
   m_Component:
   - component: {fileID: 599679311}
   - component: {fileID: 599679310}
-  - component: {fileID: 599679312}
   - component: {fileID: 599679313}
+  - component: {fileID: 599679312}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -463,7 +463,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 821865698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 448, y: 212, z: 0}
+  m_LocalPosition: {x: 83.5, y: 148.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1871322877}
@@ -667,7 +667,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Earth: {fileID: 599679309}
-  success: 0
+  failure: 0
+  score: 0
 --- !u!1 &1383232905
 GameObject:
   m_ObjectHideFlags: 0
