@@ -4,25 +4,44 @@ using UnityEngine;
 
 public class PlayerEclipseInput : MonoBehaviour {
 	public GameObject Earth;
-	public bool success = false;
+	public bool success = true;
+	public float score = 0;
+	private float timeLeft = 60;
+	private float bonus = 1;
 	private bool isEclipse;
 
 	void Start () {
+		// Set starting alignment boolean
 		isEclipse = GetComponent <CheckForEclipse>().isEclipse;
 	}
 	
 	void FixedUpdate () {
-		isEclipse = GetComponent <CheckForEclipse>().isEclipse;
-	}
+		// Action for frame updates
 
-	void OnMouseOver(){ //can change this to player tap later
-		print(isEclipse);
+		// Set Alignment Boolean
+		isEclipse = GetComponent <CheckForEclipse>().isEclipse;
+
+		// Countdown timer for score bonus
+		timeLeft -= Time.deltaTime;
+		if (timeLeft < 0) {
+			bonus = 1;
+		} else {
+			bonus = timeLeft;
+		}
+	}
+			
+
+	void OnMouseOver() {
+		// Tap feature on Sun Asset
 		if (Input.GetMouseButtonDown(0)) {
 			if (isEclipse) {
+				score += 1;
+				Debug.Log (score);
 				Debug.DrawRay (transform.position, Earth.transform.position, Color.green, 1f, true);
 			} else {
-				Debug.DrawRay (transform.position, Earth.transform.position, Color.red, 1f, true);
 				success = false;
+				score = 0;
+				Debug.DrawRay (transform.position, Earth.transform.position, Color.red, 1f, true);
 			}
 		}	
 	}
