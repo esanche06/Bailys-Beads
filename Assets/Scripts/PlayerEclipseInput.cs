@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerEclipseInput : MonoBehaviour {
 	public GameObject Earth;
-	public bool success = true;
+	public bool failure = false;
 	public float score = 0;
 	private float timeLeft = 60;
 	private float bonus = 1;
@@ -36,10 +36,11 @@ public class PlayerEclipseInput : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0)) {
 			if (isEclipse) {
 				score += 1;
+				failure = false;
 				Debug.Log (score);
 				Debug.DrawRay (transform.position, Earth.transform.position, Color.green, 1f, true);
 			} else {
-				success = false;
+				failure = true;
 				score = 0;
 				Debug.DrawRay (transform.position, Earth.transform.position, Color.red, 1f, true);
 			}
