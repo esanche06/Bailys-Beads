@@ -16,8 +16,6 @@ public class Orbit : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		// Rotation for GameObject if user has successfully achieve eclipse
-
 		// Stop the rotation
 		if (sunScript.failure) {
 			speed = 0;
