@@ -1,0 +1,334 @@
+fileFormatVersion: 2
+guid: de2663ddaf7c64efca9fd9c6f0088302
+timeCreated: 1509990313
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: AsteroidSpriteSheet1_0
+    21300002: AsteroidSpriteSheet1_1
+    21300004: AsteroidSpriteSheet1_2
+    21300006: AsteroidSpriteSheet1_3
+    21300008: AsteroidSpriteSheet1_4
+    21300010: AsteroidSpriteSheet1_5
+    21300012: AsteroidSpriteSheet1_6
+    21300014: AsteroidSpriteSheet1_7
+    21300016: AsteroidSpriteSheet1_8
+    21300018: AsteroidSpriteSheet1_9
+    21300020: AsteroidSpriteSheet1_10
+    21300022: AsteroidSpriteSheet1_11
+    21300024: AsteroidSpriteSheet1_12
+    21300026: AsteroidSpriteSheet1_13
+    21300028: AsteroidSpriteSheet1_14
+    21300030: AsteroidSpriteSheet1_15
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1287
+        width: 365
+        height: 363
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_1
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1293
+        width: 387
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_2
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1291
+        width: 385
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_3
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 1266
+        width: 350
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 845
+        width: 354
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_5
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 863
+        width: 367
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_6
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 880
+        width: 389
+        height: 348
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_7
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 864
+        width: 355
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 426
+        width: 345
+        height: 387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_9
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 426
+        width: 344
+        height: 387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_10
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 436
+        width: 362
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_11
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 427
+        width: 344
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 5
+        width: 353
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_13
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 21
+        width: 380
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_14
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 32
+        width: 384
+        height: 355
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AsteroidSpriteSheet1_15
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 7
+        width: 372
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
