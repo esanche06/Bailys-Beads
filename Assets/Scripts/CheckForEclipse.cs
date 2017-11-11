@@ -15,13 +15,13 @@ public class CheckForEclipse : MonoBehaviour {
 	void Start () {
 		results = new RaycastHit2D[3];
 		filter = new ContactFilter2D ();
-		filter.NoFilter(); //Probably going to actually add filters later but not right now
+		filter.useTriggers = false; //Probably going to actually add filters later but not right now
 		distance = Vector3.Distance(transform.position, Earth.transform.position);
 	}
 
 	void FixedUpdate () {
 		Debug.DrawRay (transform.position, Earth.transform.position, Color.blue, 0f, true);
-		if (Physics2D.Raycast (transform.position, Earth.transform.position, filter, results, distance) > 2)
+		if (Physics2D.Raycast (transform.position, Earth.transform.position, filter, results, distance) > 3)
 			isEclipse = true;
 		else
 			isEclipse = false;
