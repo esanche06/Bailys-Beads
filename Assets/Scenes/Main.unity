@@ -166,9 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b0fcad62ed64aaf9da141541694f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAsteroids: 5
   asteroid: {fileID: 1026602000795968, guid: de63a9cc1c24848168451aace2bac5f1, type: 2}
   asteroidSpeed: 0
+  currentAsteroids: 0
+  maxAsteroids: 5
 --- !u!1 &75045160
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,10 +477,10 @@ GameObject:
   - component: {fileID: 599679311}
   - component: {fileID: 599679310}
   - component: {fileID: 599679313}
-  - component: {fileID: 599679314}
-  - component: {fileID: 599679315}
   - component: {fileID: 599679312}
   - component: {fileID: 599679316}
+  - component: {fileID: 599679314}
+  - component: {fileID: 599679315}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -573,7 +574,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.345
---- !u!95 &599679314
+--- !u!111 &599679314
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599679309}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &599679315
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -590,20 +606,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &599679315
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 599679309}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1946b833c23ef43b48e7258966a5a6d9, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &599679316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +903,7 @@ GameObject:
   - component: {fileID: 1020129699}
   - component: {fileID: 1020129698}
   - component: {fileID: 1020129700}
+  - component: {fileID: 1020129701}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -990,6 +993,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.05, y: 15.779999}
   m_EdgeRadius: 0
+--- !u!114 &1020129701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020129697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed2ccf7be89e4a2cb2122e308e3d3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidSpawner: {fileID: 14836422}
 --- !u!1 &1056140169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1091,7 @@ GameObject:
   - component: {fileID: 1068213242}
   - component: {fileID: 1068213243}
   - component: {fileID: 1068213244}
+  - component: {fileID: 1068213245}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -1182,9 +1198,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Earth: {fileID: 599679309}
-  myCG: {fileID: 1301655542}
+  flashCanvas: {fileID: 1301655542}
   failure: 0
   score: 0
+--- !u!114 &1068213245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1068213239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed2ccf7be89e4a2cb2122e308e3d3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidSpawner: {fileID: 14836422}
 --- !u!1 &1085316288
 GameObject:
   m_ObjectHideFlags: 0

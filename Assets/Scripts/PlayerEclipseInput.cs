@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerEclipseInput : MonoBehaviour {
 	public GameObject Earth;
-	public CanvasGroup myCG;
+	public CanvasGroup flashCanvas;
 	public bool failure = false;
 	public float score = 0;
 
@@ -57,23 +57,23 @@ public class PlayerEclipseInput : MonoBehaviour {
 				//Debug.Log (score);
 				rayDebug (Color.green);
 				successFlash = true;
-				myCG.alpha = 1;
+				flashCanvas.alpha = 1;
 			} else {
 				failure = true;
 				score = 0;
 				rayDebug (Color.red);
 				failureFlash = true;
 				flashPanel.color = Color.red;
-				myCG.alpha = 1;
+				flashCanvas.alpha = 1;
 			}
 		}	
 	}
 
 	private bool flash(){
 		//Used in fixedUpdate to create delayed flash
-		myCG.alpha = myCG.alpha - Time.deltaTime;
-		if (myCG.alpha <= 0) {
-			myCG.alpha = 0;
+		flashCanvas.alpha = flashCanvas.alpha - Time.deltaTime;
+		if (flashCanvas.alpha <= 0) {
+			flashCanvas.alpha = 0;
 			flashEnded = true;
 		} else {
 			flashEnded = false;

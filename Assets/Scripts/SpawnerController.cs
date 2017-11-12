@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnerController : MonoBehaviour {
-	public int maxAsteroids = 5;
 	public GameObject asteroid;
 	public int asteroidSpeed;
+	public int currentAsteroids;
+	public int maxAsteroids = 10;
 
-	private int currentAsteroids;
 	private bool wait;
 	private float count;
 
@@ -28,7 +28,7 @@ public class SpawnerController : MonoBehaviour {
 		}
 
 		if (wait) {
-			if (count >= 5f)
+			if (count >= 2.5f)
 				wait = false;
 			
 			else
