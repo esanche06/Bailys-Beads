@@ -6,8 +6,8 @@ public class AsteroidController : MonoBehaviour {
 	private GameObject target;
 	private Animator anim;
 	private Vector3 targetPosition, mousePosition;
-	private Vector2 targetDirection, startPos, endPos, direction;
-	private float touchTimeStart, touchTimeFinish, timeInterval;
+	private Vector2 targetDirection, startPos, endPos, direction, stop;
+	private float touchTimeStart, touchTimeFinish, timeInterval, mousePosX, mousePosY;
 
 	[Range (0.05f, 1f)]
 	public float throwForce = 0.3f;
@@ -20,6 +20,7 @@ public class AsteroidController : MonoBehaviour {
 		target = GameObject.Find ("Sun");
 		targetPosition = target.GetComponent<Transform> ().position - transform.position;
 		targetDirection = new Vector2 (targetPosition.x, targetPosition.y);
+		stop = new Vector2 (0, 0);
 
 		GetComponent<Rigidbody2D> ().AddForce (targetDirection * 10);
 	}
@@ -29,14 +30,14 @@ public class AsteroidController : MonoBehaviour {
 		if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began) {
 			touchTimeStart = Time.time;
 			startPos = Input.GetTouch (0).position;
-			if (GetComponent<Collider2D> () == Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (startPos))) {
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+			if (GetComponent<Collider2D> () == Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (new Vector3(startPos.x, startPos.y, 80f)))) {
+				GetComponent<Rigidbody2D> ().velocity = stop;
 			}
 		}
 
 		//release finger
 		if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended){
-			if (GetComponent<Collider2D> () == Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (startPos))) {
+			if (GetComponent<Collider2D> () == Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (new Vector3(startPos.x, startPos.y, 80f)))) {
 				touchTimeFinish = Time.time;
 
 				timeInterval = touchTimeFinish - touchTimeStart;
@@ -49,5 +50,15 @@ public class AsteroidController : MonoBehaviour {
 			}
 		}
 	}
+
+	/*void OnMouseOver(){
+		if (Input.GetMouseButtonDown (0)) {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+		}
+
+		if (Input.GetMouseButtonUp (0)) {
+			GetComponent<Rigidbody2D> ().AddForce (targetDirection * 10);
+		}
+	}*/
 
 }
