@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StopOnFail : MonoBehaviour {
-	private PlayerEclipseInput sunScript;
+	public bool gameFailed = false;
+
+	private GameController gc;
 
 	void Start(){
-		sunScript = GameObject.Find ("Sun").GetComponent<PlayerEclipseInput>();
+		gc = GameObject.Find ("GameController").GetComponent<GameController>();
+		gameFailed = gc.gameFailed;
 	}
 
 	void FixedUpdate(){
 		// Stop the rotation
-		if (sunScript.failure)
-			GetComponent<Orbit>().speed = 0;
+		if (gc.gameFailed && (gameObject.name == "Earth" || gameObject.name == "Moon"))
+			GetComponent<Orbit> ().speed = 0;
+		else if (gc.gameFailed && gameObject.name == "Asteroid(Clone)")
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
 	}
 
 

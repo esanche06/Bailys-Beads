@@ -19,8 +19,7 @@ public class SpawnerController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (currentAsteroids < maxAsteroids && !wait) {
-			GameObject asteroidClone;
-			asteroidClone = Instantiate (asteroid, transform.position, transform.rotation);
+			Instantiate (asteroid, transform.position, transform.rotation);
 
 			wait = true;
 			count = 0;

@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89de9140fb6be432c82d1bec235d88ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameFailed: 0
 --- !u!1 &266754413
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,10 +478,11 @@ GameObject:
   - component: {fileID: 599679311}
   - component: {fileID: 599679310}
   - component: {fileID: 599679313}
-  - component: {fileID: 599679312}
-  - component: {fileID: 599679316}
   - component: {fileID: 599679314}
   - component: {fileID: 599679315}
+  - component: {fileID: 599679316}
+  - component: {fileID: 599679312}
+  - component: {fileID: 599679317}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -615,6 +617,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89de9140fb6be432c82d1bec235d88ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameFailed: 0
+--- !u!114 &599679317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599679309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8855f58533d5e47919c0f044bc940cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &707777618
@@ -1089,8 +1103,6 @@ GameObject:
   - component: {fileID: 1068213241}
   - component: {fileID: 1068213240}
   - component: {fileID: 1068213242}
-  - component: {fileID: 1068213243}
-  - component: {fileID: 1068213244}
   - component: {fileID: 1068213245}
   m_Layer: 0
   m_Name: Sun
@@ -1171,36 +1183,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 12
---- !u!114 &1068213243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1068213239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925ba61e98a4e4e6cac316c8a9ef87dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Earth: {fileID: 599679309}
-  Moon: {fileID: 234999176}
-  distance: 1
-  isEclipse: 0
---- !u!114 &1068213244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1068213239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea3c54702602f49fc866e819656f4a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Earth: {fileID: 599679309}
-  flashCanvas: {fileID: 1301655542}
-  failure: 0
-  score: 0
 --- !u!114 &1068213245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1335,6 +1317,54 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1085316288}
+--- !u!1 &1237746092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1237746094}
+  - component: {fileID: 1237746093}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1237746093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1237746092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4624a3a224040a885d87b68ec7ee1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sun: {fileID: 1068213239}
+  Earth: {fileID: 599679309}
+  Moon: {fileID: 234999176}
+  flashCanvas: {fileID: 1301655542}
+  distance: 1
+  isEclipse: 0
+  gameFailed: 0
+  score: 0
+--- !u!4 &1237746094
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1237746092}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1262301029
 GameObject:
   m_ObjectHideFlags: 0

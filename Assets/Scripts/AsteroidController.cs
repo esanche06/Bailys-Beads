@@ -12,7 +12,6 @@ public class AsteroidController : MonoBehaviour {
 	[Range (0.05f, 1f)]
 	public float throwForce = 0.3f;
 
-	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
 		anim.SetInteger ("asteroidType", Random.Range (1, 4));
@@ -51,14 +50,5 @@ public class AsteroidController : MonoBehaviour {
 		}
 	}
 
-	/*void OnMouseOver(){
-		if (Input.GetMouseButtonDown (0)) {
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
-		}
-
-		if (Input.GetMouseButtonUp (0)) {
-			GetComponent<Rigidbody2D> ().AddForce (targetDirection * 10);
-		}
-	}*/
 
 }
