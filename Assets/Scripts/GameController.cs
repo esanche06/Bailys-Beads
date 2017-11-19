@@ -33,7 +33,6 @@ public class GameController : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (!gameFailed) {
-			//Debug.DrawRay (transform.position, Earth.transform.position, Color.blue, 0f, true);
 			if (Physics2D.Raycast (transform.position, Earth.transform.position, filter, results, distance) > 2)
 				isEclipse = true;
 			else

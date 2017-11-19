@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4173d8273631a4e3ab58059e37720cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 0.3
+  throwForce: 1
 --- !u!114 &114547801363128980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89de9140fb6be432c82d1bec235d88ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failure: 0
+  gameFailed: 0
 --- !u!212 &212139797542536634
 SpriteRenderer:
   m_ObjectHideFlags: 1

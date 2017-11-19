@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SunController : MonoBehaviour {
+public class SolarFlare : MonoBehaviour {
+	private Animator anim;
 
-	// Use this for initialization
-	void Start () {
-		
+	void Start(){
+		anim = GetComponent<Animator> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void FixedUpdate(){
+		if (Time.time % 5 == 0)
+			anim.SetTrigger ("playFlare");
 	}
 }
