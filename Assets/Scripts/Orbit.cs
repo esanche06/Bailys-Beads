@@ -7,11 +7,14 @@ public class Orbit : MonoBehaviour {
 	public float speed;
 
 	private float xPos, yPos, distance, unityDistance;
+	private SolarFlare solarFlare;
 	private int randIndex;
 	private int[] posOrNeg;
 	private Vector3 zAxis = new Vector3(0,0,1);
 
 	void Start(){
+		solarFlare = GameObject.Find ("Sun").GetComponent<SolarFlare> ();
+
 		randIndex = Random.Range (0, 2);
 		posOrNeg = new int[] {-1, 1};
 
@@ -24,6 +27,9 @@ public class Orbit : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		transform.RotateAround (Parent.transform.position, zAxis, speed * Time.deltaTime);
+		if (solarFlare.flaring)
+			transform.RotateAround (Parent.transform.position, zAxis, 2 * speed * Time.deltaTime);
+		else
+			transform.RotateAround (Parent.transform.position, zAxis, speed * Time.deltaTime);
 	}
 }
