@@ -9,13 +9,12 @@ public class SpawnerController : MonoBehaviour {
 	public int maxAsteroids = 10;
 
 	private bool wait;
-	private float count, waitTime;
+	private float count;
 
 	void Start(){
 		currentAsteroids = 0;
-		wait = true;
+		wait = false;
 		count = 0;
-		waitTime = Random.Range (1f, 5f);
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -25,11 +24,10 @@ public class SpawnerController : MonoBehaviour {
 			wait = true;
 			count = 0;
 			currentAsteroids++;
-			waitTime = Random.Range (1f, 5f);
 		}
 
 		if (wait) {
-			if (count >= waitTime)
+			if (count >= 2.5f)
 				wait = false;
 			
 			else
