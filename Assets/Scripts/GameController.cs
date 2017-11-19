@@ -8,7 +8,6 @@ public class GameController : MonoBehaviour {
 	public GameObject Earth;
 	public GameObject Moon;
 	public CanvasGroup flashCanvas;
-	public float distance = 1;
 	public bool isEclipse = false, gameFailed = false;
 	public int score = 0;
 
@@ -16,7 +15,7 @@ public class GameController : MonoBehaviour {
 	private RaycastHit2D[] results;
 	private ContactFilter2D filter;
 	private Vector3 dir;
-	private float bonus = 1f, timeLeft = 60f;
+	private float bonus = 1f, timeLeft = 60f, distance = 1;
 	private bool successFlash = false, failureFlash = false, flashEnded = false, checkingForFailure = true; 
 	private Camera c;
 
@@ -33,8 +32,8 @@ public class GameController : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (!gameFailed) {
-			//Debug.DrawRay (transform.position, Earth.transform.position, Color.blue, 0f, true);
-			if (Physics2D.Raycast (transform.position, Earth.transform.position, filter, results, distance) > 2)
+			int numHits = Physics2D.Raycast (transform.position, Earth.transform.position, filter, results, distance);
+			if (numHits > 2 && numHits < 4)
 				isEclipse = true;
 			else
 				isEclipse = false;
