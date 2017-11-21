@@ -7,12 +7,13 @@ public class GameController : MonoBehaviour {
 	public GameObject Sun;
 	public GameObject Earth;
 	public GameObject Moon;
+
 	public CanvasGroup flashCanvas;
 	public float distance = 1;
 	public bool isEclipse = false, gameFailed = false;
-	public int score;
+	public int score, level;
 	public Text scoreText;
-
+	
 	private Camera c; 
 	private Image flashPanel; 
 	private RaycastHit2D[] results;
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour {
 
 	void Start () {
 		score = 0;
-		updateScore();
+		level = 1;
 		results = new RaycastHit2D[3];
 		filter = new ContactFilter2D ();
 		filter.useTriggers = false; //Probably going to actually add filters later but not right now
@@ -70,7 +71,6 @@ public class GameController : MonoBehaviour {
 			Input.GetMouseButtonDown (0) 	&&
 			Sun.GetComponent<Collider2D> () == Physics2D.OverlapPoint(c.ScreenToWorldPoint (new Vector3(Input.mousePosition.x, Input.mousePosition.y, 80f)))) {
 			if (isEclipse) {
-				score += 1;
 				updateScore();
 				//rayDebug (Color.green);
 				successFlash = true;
@@ -107,7 +107,10 @@ public class GameController : MonoBehaviour {
 	
 	void updateScore()
 	{
+		int multiplier = 100*level*level;
+		score = multiplier;
 		scoreText.text = "Score: " + score;
+		level += 1;
 	}
 
 }
