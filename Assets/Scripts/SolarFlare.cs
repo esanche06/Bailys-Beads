@@ -5,21 +5,24 @@ using UnityEngine;
 public class SolarFlare : MonoBehaviour {
 	public bool flaring;
 
-	private float timeSinceFlare;
+	private float timeSinceFlare, timeTillNextFlare;
 	private Animator anim;
 
 	void Start(){
 		timeSinceFlare = 0f;
 		anim = GetComponent<Animator> ();
+		timeTillNextFlare = Random.Range (10f, 15f);
+
 	}
 
 	void FixedUpdate(){
 		if (timeSinceFlare > 5f) {
 			timeSinceFlare = 0f;
 			flaring = false;
+			timeTillNextFlare = Random.Range (10f, 15f);
 		}
 
-		if (Time.time % 10 == 0 && Time.time != 0) {
+		if (Time.time % timeTillNextFlare == 0 && Time.time != 0) {
 			flaring = true;
 			anim.Play ("SunFlare");
 		}

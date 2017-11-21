@@ -6,7 +6,7 @@ public class Orbit : MonoBehaviour {
 	public GameObject Parent;
 	public float speed;
 
-	private float xPos, yPos, distance, unityDistance;
+	private float xPos, yPos, distance;
 	private SolarFlare solarFlare;
 	private int randIndex;
 	private int[] posOrNeg;
@@ -20,7 +20,7 @@ public class Orbit : MonoBehaviour {
 
 		//Debug.Log (gameObject.name + " " + transform.localPosition);
 
-		distance = Vector3.Distance (Parent.transform.position, transform.position);
+		distance = Vector3.Distance (new Vector3(0, 0, 0), transform.localPosition);
 
 		//Debug.Log (gameObject.name + " " + Parent.transform.localPosition + " " + Parent.transform.position);
 
