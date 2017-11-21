@@ -7,7 +7,6 @@ public class TransitionScene : MonoBehaviour {
 
 	public void ChangeScene (string sceneName) {
 		Application.LoadLevel (sceneName);
-
 	}
 
 }

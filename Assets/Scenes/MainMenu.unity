@@ -509,7 +509,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 494288006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 451.5, y: 243, z: 0}
+  m_LocalPosition: {x: 65.5, y: 116.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1730902294}
@@ -533,7 +533,6 @@ GameObject:
   - component: {fileID: 1132357747}
   - component: {fileID: 1132357746}
   - component: {fileID: 1132357750}
-  - component: {fileID: 1132357751}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -610,17 +609,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1132357745}
   m_Enabled: 1
---- !u!114 &1132357751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132357745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0287fc2bccbef445ca67747e3bc6b188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1282298635
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +620,7 @@ GameObject:
   - component: {fileID: 1282298639}
   - component: {fileID: 1282298638}
   - component: {fileID: 1282298637}
-  - component: {fileID: 1282298640}
+  - component: {fileID: 1282298641}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -647,7 +635,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1282298635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 17.009998, z: 0}
+  m_LocalPosition: {x: 0, y: 8.155001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1615909260}
@@ -698,9 +686,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1132357751}
-        m_MethodName: ChangeScene
-        m_Mode: 5
+      - m_Target: {fileID: 1282298641}
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -744,7 +732,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1282298635}
---- !u!114 &1282298640
+--- !u!114 &1282298641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -752,7 +740,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1282298635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03307dcf5363daa42b11713b6df3e0ab, type: 3}
+  m_Script: {fileID: 11500000, guid: dc8c8d7a6a6a74459aa96a951f0ff4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1615909259
@@ -853,7 +841,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1730902293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000030517578, y: -133.65, z: 0}
+  m_LocalPosition: {x: 0.0000038146973, y: -64.075, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1282298636}
@@ -910,6 +898,7 @@ GameObject:
   - component: {fileID: 1889786889}
   - component: {fileID: 1889786888}
   - component: {fileID: 1889786887}
+  - component: {fileID: 1889786890}
   m_Layer: 5
   m_Name: Instructions
   m_TagString: Untagged
@@ -924,7 +913,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1889786885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -17.01, z: 0}
+  m_LocalPosition: {x: 0, y: -8.155, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 168050015}
@@ -975,9 +964,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1132357751}
-        m_MethodName: ChangeScene
-        m_Mode: 5
+      - m_Target: {fileID: 1889786890}
+        m_MethodName: OnClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1021,3 +1010,14 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1889786885}
+--- !u!114 &1889786890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1889786885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd204e86314c476bb4ce51441486c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

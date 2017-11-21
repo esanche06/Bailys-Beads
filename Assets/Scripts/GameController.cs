@@ -11,14 +11,15 @@ public class GameController : MonoBehaviour {
 	public float distance = 1;
 	public bool isEclipse = false, gameFailed = false;
 	public int score;
-	public GUIText scoreText;
-	private Image flashPanel;
+	public Text scoreText;
+
+	private Camera c; 
+	private Image flashPanel; 
 	private RaycastHit2D[] results;
 	private ContactFilter2D filter;
 	private Vector3 dir;
 	private float bonus = 1f, timeLeft = 60f;
 	private bool successFlash = false, failureFlash = false, flashEnded = false, checkingForFailure = true; 
-	private Camera c;
 
 	void Start () {
 		score = 0;
@@ -29,7 +30,6 @@ public class GameController : MonoBehaviour {
 		distance = Vector3.Distance(transform.position, Earth.transform.position);
 
 		flashPanel = GameObject.Find ("Flash").GetComponent<Image> ();
-
 		c = Camera.main;
 	}
 
@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour {
 	void checkForFailure(){
 		if (!gameFailed 					&&
 			Input.GetMouseButtonDown (0) 	&&
-			Sun.GetComponent<Collider2D>() == Physics2D.OverlapPoint(c.ScreenToWorldPoint (new Vector3(Input.mousePosition.x, Input.mousePosition.y, 80f)))) {
+			Sun.GetComponent<Collider2D> () == Physics2D.OverlapPoint(c.ScreenToWorldPoint (new Vector3(Input.mousePosition.x, Input.mousePosition.y, 80f)))) {
 			if (isEclipse) {
 				score += 1;
 				updateScore();
@@ -88,7 +88,6 @@ public class GameController : MonoBehaviour {
 
 	void failure(){
 		score = 0;
-		//rayDebug (Color.red);
 		failureFlash = true;
 		flashPanel.color = Color.red;
 		flashCanvas.alpha = 1;
