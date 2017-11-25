@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour {
 	public bool isEclipse = false, gameFailed = false;
 	public int score, level;
 	public Text scoreText;
+	public AudioSource successSource;
+	public AudioClip successClip;
 	
 	private Camera c; 
 	private Image flashPanel; 
@@ -32,6 +34,9 @@ public class GameController : MonoBehaviour {
 
 		flashPanel = GameObject.Find ("Flash").GetComponent<Image> ();
 		c = Camera.main;
+
+		successSource = GetComponent<AudioSource> ();
+		successSource.clip = successClip;
 	}
 
 	void FixedUpdate () {
@@ -75,6 +80,7 @@ public class GameController : MonoBehaviour {
 				//rayDebug (Color.green);
 				successFlash = true;
 				flashCanvas.alpha = 1;
+				successSource.Play ();
 			} else {
 				gameFailed = true;
 				checkingForFailure = false;

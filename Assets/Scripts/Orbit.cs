@@ -33,9 +33,12 @@ public class Orbit : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (solarFlare.flaring)
-			transform.RotateAround (Parent.transform.position, zAxis, 2 * speed * Time.deltaTime);
-		else
+		// Sets the speed for Orbit depended on SolarFlare
+		if (solarFlare.flaring) {
+			transform.RotateAround (Parent.transform.position, zAxis, solarFlare.flareSpeedRate * speed * Time.deltaTime);
+		} else {
 			transform.RotateAround (Parent.transform.position, zAxis, speed * Time.deltaTime);
+		}
 	}
+
 }

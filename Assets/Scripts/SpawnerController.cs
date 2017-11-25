@@ -7,6 +7,8 @@ public class SpawnerController : MonoBehaviour {
 	public int asteroidSpeed;
 	public int currentAsteroids;
 	public int maxAsteroids = 10;
+	public AudioSource collisionSource;
+	public AudioClip collisionClip;
 
 	private bool wait;
 	private float count, waitTime;
@@ -16,6 +18,8 @@ public class SpawnerController : MonoBehaviour {
 		wait = true;
 		count = 0;
 		waitTime = Random.Range (1f, 5f);
+		collisionSource = GetComponent<AudioSource> ();
+		collisionSource.clip = collisionClip;
 	}
 	// Update is called once per frame
 	void FixedUpdate () {

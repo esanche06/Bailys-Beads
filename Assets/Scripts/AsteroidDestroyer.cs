@@ -8,6 +8,7 @@ public class AsteroidDestroyer : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision){
 		if (gameObject.name == "Sun" && collision.gameObject.tag == "Asteroid") {
 			Destroy (collision.gameObject);
+			asteroidSpawner.GetComponent<SpawnerController> ().collisionSource.Play ();
 			asteroidSpawner.GetComponent<SpawnerController> ().currentAsteroids--;	
 		}
 	}
