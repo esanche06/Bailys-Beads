@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HomeButton : MonoBehaviour {
 	public void OnClick(){
+		Time.timeScale = 1;
 		SceneManager.LoadSceneAsync ("MainMenu"); //.buildindex?
 	}
 }
