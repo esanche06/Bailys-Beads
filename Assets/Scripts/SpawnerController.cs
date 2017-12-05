@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnerController : MonoBehaviour {
 	public GameObject asteroid;
+	public GameObject GameController;
 	public int asteroidSpeed;
 	public int currentAsteroids;
 	public int maxAsteroids = 10;
@@ -11,9 +12,12 @@ public class SpawnerController : MonoBehaviour {
 	public AudioClip collisionClip;
 
 	private bool wait;
-	private float count, waitTime;
+	private float count, waitTime, maxWaitTime;
+	private int level;
 
 	void Start(){
+		level = GameController.GetComponent<GameController> ().level;
+		maxWaitTime = ((-1 / 10) * level) + 5f;
 		currentAsteroids = 0;
 		wait = true;
 		count = 0;
@@ -29,7 +33,9 @@ public class SpawnerController : MonoBehaviour {
 			wait = true;
 			count = 0;
 			currentAsteroids++;
-			waitTime = Random.Range (1f, 5f);
+			level = GameController.GetComponent<GameController> ().level;
+			waitTime = Random.Range (1f, Mathf.Max(1f, maxWaitTime));
+			maxWaitTime = ((-1f / 10f) * level) + 5f;
 		}
 
 		if (wait) {

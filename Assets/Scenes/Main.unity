@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroid: {fileID: 1026602000795968, guid: de63a9cc1c24848168451aace2bac5f1, type: 2}
+  GameController: {fileID: 1237746092}
   asteroidSpeed: 0
   currentAsteroids: 0
   maxAsteroids: 5
@@ -744,6 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseCanvas: {fileID: 682870047}
+  GameController: {fileID: 1237746092}
 --- !u!114 &335356096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2162,6 +2164,7 @@ MonoBehaviour:
   solarFlareSource: {fileID: 0}
   solarFlareClip: {fileID: 8300000, guid: df10c3975ee444d31ba904a60a387700, type: 3}
   flareSpeedRate: 0
+  GameController: {fileID: 1237746092}
 --- !u!114 &1068213245
 MonoBehaviour:
   m_ObjectHideFlags: 0

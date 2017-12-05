@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwForce: 1
+  GameController: {fileID: 0}
 --- !u!114 &114547801363128980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,6 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameFailed: 0
+  failureSource: {fileID: 0}
+  failureClip: {fileID: 0}
 --- !u!212 &212139797542536634
 SpriteRenderer:
   m_ObjectHideFlags: 1
