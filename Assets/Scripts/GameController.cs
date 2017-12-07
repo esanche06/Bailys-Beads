@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour {
 	public Text scoreText;
     public Text highScoreText;
     public Text gameOverText;
+    public Text timeLeftText;
 	public AudioSource successSource;
 	public AudioClip successClip;
 	
@@ -37,8 +38,8 @@ public class GameController : MonoBehaviour {
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         highScoreText.text = "High Score: " + highScore;
         level = 1;
-        TimeLimit = (100 / level) + 5; //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
-        
+        TimeLimit = (100 / level); //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
+        timeLeftText.text = "Time left: " + (int)TimeLimit;
 		results = new RaycastHit2D[3];
 		filter = new ContactFilter2D ();
 		filter.useTriggers = false; //Probably going to actually add filters later but not right now
@@ -61,6 +62,7 @@ public class GameController : MonoBehaviour {
             // Countdown timer for score bonus
             TimeSpan timeLefttemp = DateTime.Now - startTime;
             timeLeft = Convert.ToSingle(timeLefttemp.TotalSeconds);
+            timeLeftText.text = "Time left: " + (int) (TimeLimit - timeLeft);
             highScoreText.text = timeLeft.ToString();
 			if (TimeLimit - timeLeft< 0) {
                 gameFailed = true;
@@ -132,6 +134,10 @@ public class GameController : MonoBehaviour {
 	{
 		int multiplier = 100*level*level;
 		score = multiplier * (int) timeLeft ;
+        if (!flashEnded)
+        {
+            score += 1000 * level;
+        }
 		scoreText.text = "Score: " + score;
 		level += 1;
         startTime = DateTime.Now;
