@@ -11,8 +11,9 @@ public class GameController : MonoBehaviour {
 	public CanvasGroup flashCanvas;
 	public float distance = 1;
 	public bool isEclipse = false, gameFailed = false;
-	public int score, level;
+	public int score, level, highScore;
 	public Text scoreText;
+    public Text highScoreText;
 	public AudioSource successSource;
 	public AudioClip successClip;
 	
@@ -22,11 +23,15 @@ public class GameController : MonoBehaviour {
 	private ContactFilter2D filter;
 	private Vector3 dir;
 	private float bonus = 1f, timeLeft = 60f;
-	private bool successFlash = false, failureFlash = false, flashEnded = false, checkingForFailure = true; 
+	private bool successFlash = false, failureFlash = false, flashEnded = false, checkingForFailure = true;
+    string highScoreKey = "HighScore";
 
-	void Start () {
+
+    void Start () {
 		score = 0;
-		level = 1;
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+        highScoreText.text = "High Score: " + highScore;
+        level = 1;
 		results = new RaycastHit2D[3];
 		filter = new ContactFilter2D ();
 		filter.useTriggers = false; //Probably going to actually add filters later but not right now
@@ -117,6 +122,13 @@ public class GameController : MonoBehaviour {
 		score = multiplier;
 		scoreText.text = "Score: " + score;
 		level += 1;
-	}
+        if (score > highScore)
+        {
+            highScore = score;
+            highScoreText.text = "High Score: " + highScore;
+            PlayerPrefs.SetInt(highScoreKey, score);
+            PlayerPrefs.Save();
+        }
+    }
 
 }
