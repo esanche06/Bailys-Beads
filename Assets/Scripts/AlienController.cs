@@ -9,7 +9,7 @@ public class AlienController : MonoBehaviour {
 	private float touchTimeStart, touchTimeFinish, timeInterval, mousePosX, mousePosY;
 
 	[Range (0.05f, 1f)]
-	public float throwForce = 0.3f;
+	public float throwForce = 0.2f;
 
 	void Start () {
 			if (transform.position.x < 0) {
@@ -18,7 +18,7 @@ public class AlienController : MonoBehaviour {
 			targetDirection = new Vector2 (targetPosition.x, targetPosition.y);
 			stop = new Vector2 (0, 0);
 
-			GetComponent<Rigidbody2D> ().AddForce (targetDirection * 10);
+			GetComponent<Rigidbody2D> ().AddForce (targetDirection * 4);
 		}
 		else {
 			target = GameObject.Find ("LeftAlienTarget");
@@ -26,7 +26,7 @@ public class AlienController : MonoBehaviour {
 			targetDirection = new Vector2 (targetPosition.x, targetPosition.y);
 			stop = new Vector2 (0, 0);
 
-			GetComponent<Rigidbody2D> ().AddForce (targetDirection * 10);
+			GetComponent<Rigidbody2D> ().AddForce (targetDirection * 4);
 		}
 
 	}

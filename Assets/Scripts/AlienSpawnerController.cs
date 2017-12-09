@@ -6,7 +6,7 @@ public class AlienSpawnerController : MonoBehaviour {
 	public GameObject alien;
 	public int alienSpeed;
 	public int currentAliens;
-	public int maxAliens = 10;
+	public int maxAliens = 5;
 	//public AudioSource collisionSource;
 	//public AudioClip collisionClip;
 
