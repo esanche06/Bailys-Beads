@@ -242,7 +242,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 602375034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.300003, y: 128.0824, z: 0}
+  m_LocalPosition: {x: 2.300003, y: 624.8879, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1634631481}
@@ -496,7 +496,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1615305892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -135.2824, z: 0}
+  m_LocalPosition: {x: 0, y: -632.0879, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1690991440}
@@ -506,7 +506,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 80}
-  m_SizeDelta: {x: 300, y: 50}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1615305894
 MonoBehaviour:
@@ -675,8 +675,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1634631477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 451.5, y: 243, z: 0}
-  m_LocalScale: {x: 1.12875, y: 1.12875, z: 1.12875}
+  m_LocalPosition: {x: 136.5, y: 243, z: 0}
+  m_LocalScale: {x: 0.34125, y: 0.34125, z: 0.34125}
   m_Children:
   - {fileID: 2118742662}
   - {fileID: 602375035}
@@ -745,11 +745,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d7523ec705c134472be0ec8d09f99dab, type: 3}
-    m_FontSize: 35
-    m_FontStyle: 1
+    m_FontSize: 50
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -924,7 +924,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2118742661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -204.71759, z: 0}
+  m_LocalPosition: {x: 0, y: 292.0879, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1634631481}
@@ -967,9 +967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'TAP THE SUN
-
-    when moon is between sun and earth.'
+  m_Text: "TAP THE SUN\nwhen moon is between \nsun and earth."
 --- !u!222 &2118742664
 CanvasRenderer:
   m_ObjectHideFlags: 0
