@@ -11,6 +11,7 @@ public class AsteroidController : MonoBehaviour {
 
 	[Range (0.05f, 1f)]
 	public float throwForce = 0.3f;
+	public GameObject GameController;
 
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -21,7 +22,10 @@ public class AsteroidController : MonoBehaviour {
 		targetDirection = new Vector2 (targetPosition.x, targetPosition.y);
 		stop = new Vector2 (0, 0);
 
-		GetComponent<Rigidbody2D> ().AddForce (targetDirection * 10);
+		GameObject GameController = GameObject.Find("GameController");
+		float level = GameController.GetComponent<GameController> ().level;
+		float mod = (float)((1.5 * level * Mathf.Log10 (level)) + 10f);
+		GetComponent<Rigidbody2D> ().AddForce (targetDirection * Mathf.Min(mod, 100));
 	}
 
 	void Update(){
