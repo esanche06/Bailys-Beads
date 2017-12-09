@@ -36,10 +36,10 @@ public class GameController : MonoBehaviour {
         startTime = DateTime.Now;
 		score = 0;
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
-        highScoreText.text = "High Score: " + highScore;
+        highScoreText.text = "H i g h   S c o r e : " + highScore;
         level = 1;
         TimeLimit = (100 / level); //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
-        timeLeftText.text = "Time left: " + (int)TimeLimit;
+        timeLeftText.text = "Time  Left : " + (int)TimeLimit;
 		results = new RaycastHit2D[3];
 		filter = new ContactFilter2D ();
 		filter.useTriggers = false; //Probably going to actually add filters later but not right now
@@ -53,7 +53,9 @@ public class GameController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		if (!gameFailed) {
+        
+
+        if (!gameFailed) {
 			if (Physics2D.Raycast (transform.position, Earth.transform.position, filter, results, distance) > 2)
 				isEclipse = true;
 			else
@@ -62,13 +64,20 @@ public class GameController : MonoBehaviour {
             // Countdown timer for score bonus
             TimeSpan timeLefttemp = DateTime.Now - startTime;
             timeLeft = Convert.ToSingle(timeLefttemp.TotalSeconds);
-            timeLeftText.text = "Time left: " + (int) (TimeLimit - timeLeft);
-            highScoreText.text = timeLeft.ToString();
-			if (TimeLimit - timeLeft< 0) {
+            if (TimeLimit - timeLeft < 10)
+            {
+                timeLeftText.color = Color.red;
+            }
+            else
+            {
+                //timeLeftText.color = Color.white;
+            }
+            timeLeftText.text = "Time  Left : " + (int) (TimeLimit - timeLeft);
+			if (TimeLimit - timeLeft < 0) {
                 gameFailed = true;
                 checkingForFailure = false;
                 failure();
-                gameOverText.text = "You ran out of time.";
+                gameOverText.text = "OUT OF TIME!";
             } else {
 				bonus = timeLeft;
 			}
@@ -138,7 +147,7 @@ public class GameController : MonoBehaviour {
         {
             score += 1000 * level;
         }
-		scoreText.text = "Score: " + score;
+		scoreText.text = "S c o r e : " + score;
 		level += 1;
         startTime = DateTime.Now;
         TimeLimit = (100 / level) + 5; //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
@@ -146,7 +155,7 @@ public class GameController : MonoBehaviour {
         if (score > highScore)
         {
             highScore = score;
-            highScoreText.text = "High Score: " + highScore;
+            highScoreText.text = "H i g h   S c o r e : " + highScore;
             PlayerPrefs.SetInt(highScoreKey, score);
             PlayerPrefs.Save();
         }
