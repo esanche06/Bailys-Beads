@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +11,8 @@ public class GameController : MonoBehaviour {
 	public CanvasGroup flashCanvas;
 	public float distance = 1;
 	public bool isEclipse = false, gameFailed = false;
-	public int score, level, highScore;
+	public int score, level;
 	public Text scoreText;
-    public Text highScoreText;
-    public Text gameOverText;
-    public Text timeLeftText;
 	public AudioSource successSource;
 	public AudioClip successClip;
 	
@@ -25,21 +21,12 @@ public class GameController : MonoBehaviour {
 	private RaycastHit2D[] results;
 	private ContactFilter2D filter;
 	private Vector3 dir;
-	public float bonus = 1f,TimeLimit;
-	private bool successFlash = false, failureFlash = false, flashEnded = false, checkingForFailure = true;
-    string highScoreKey = "HighScore";
+	private float bonus = 1f, timeLeft = 60f;
+	private bool successFlash = false, failureFlash = false, flashEnded = false, checkingForFailure = true; 
 
-    public System.DateTime startTime;
-    public float timeLeft;
-
-    void Start () {
-        startTime = DateTime.Now;
+	void Start () {
 		score = 0;
-        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
-        highScoreText.text = "H i g h   S c o r e : " + highScore;
-        level = 1;
-        TimeLimit = (100 / level); //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
-        timeLeftText.text = "Time  Left : " + (int)TimeLimit;
+		level = 1;
 		results = new RaycastHit2D[3];
 		filter = new ContactFilter2D ();
 		filter.useTriggers = false; //Probably going to actually add filters later but not right now
@@ -53,32 +40,17 @@ public class GameController : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-        
-
-        if (!gameFailed) {
+		if (!gameFailed) {
 			if (Physics2D.Raycast (transform.position, Earth.transform.position, filter, results, distance) > 2)
 				isEclipse = true;
 			else
 				isEclipse = false;
 
-            // Countdown timer for score bonus
-            TimeSpan timeLefttemp = DateTime.Now - startTime;
-            timeLeft = Convert.ToSingle(timeLefttemp.TotalSeconds);
-            if (TimeLimit - timeLeft < 10)
-            {
-                timeLeftText.color = Color.red;
-            }
-            else
-            {
-                //timeLeftText.color = Color.white;
-            }
-            timeLeftText.text = "Time  Left : " + (int) (TimeLimit - timeLeft);
-			if (TimeLimit - timeLeft < 0) {
-                gameFailed = true;
-                checkingForFailure = false;
-                failure();
-                gameOverText.text = "OUT OF TIME!";
-            } else {
+			// Countdown timer for score bonus
+			timeLeft -= Time.deltaTime;
+			if (timeLeft < 0) {
+				bonus = 1;
+			} else {
 				bonus = timeLeft;
 			}
 		}
@@ -142,23 +114,9 @@ public class GameController : MonoBehaviour {
 	void updateScore()
 	{
 		int multiplier = 100*level*level;
-		score = multiplier * (int) timeLeft ;
-        if (!flashEnded)
-        {
-            score += 1000 * level;
-        }
-		scoreText.text = "S c o r e : " + score;
+		score = multiplier;
+		scoreText.text = "Score: " + score;
 		level += 1;
-        startTime = DateTime.Now;
-        TimeLimit = (100 / level) + 5; //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
-
-        if (score > highScore)
-        {
-            highScore = score;
-            highScoreText.text = "H i g h   S c o r e : " + highScore;
-            PlayerPrefs.SetInt(highScoreKey, score);
-            PlayerPrefs.Save();
-        }
-    }
+	}
 
 }
