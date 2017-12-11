@@ -22,7 +22,7 @@ public class AsteroidController : MonoBehaviour {
 		targetDirection = new Vector2 (targetPosition.x, targetPosition.y);
 		stop = new Vector2 (0, 0);
 
-		GameObject GameController = GameObject.Find("GameController");
+		GameController = GameObject.Find("GameController");
 		float level = GameController.GetComponent<GameController> ().level;
 		float mod = (float)((.5 * level * Mathf.Log10 (level)) + 10f);
 		GetComponent<Rigidbody2D> ().AddForce (targetDirection * Mathf.Min(mod, 25));

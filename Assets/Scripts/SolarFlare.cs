@@ -45,7 +45,7 @@ public class SolarFlare : MonoBehaviour {
 			maxWait = ((-1f / 10f) * level) + 15;
 			minWait = maxWait - 5;
 			timeTillNextFlare = Random.Range (Mathf.Max(5f, minWait), Mathf.Max(10f, maxWait));
-			Debug.Log(level + " " + minWait + " " + maxWait);
+			//Debug.Log(level + " " + minWait + " " + maxWait);
 		}
 
 		if (flaring)
