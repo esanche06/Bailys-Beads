@@ -12,10 +12,6 @@ public class Orbit : MonoBehaviour {
 	private int[] posOrNeg;
 	private Vector3 zAxis = new Vector3(0,0,1);
 
-	//For Alien Bonus Slow Down
-	private AlienCollector bonusAlien;
-
-
 	void Start(){
 		solarFlare = GameObject.Find ("Sun").GetComponent<SolarFlare> (); 
 
@@ -34,9 +30,6 @@ public class Orbit : MonoBehaviour {
 		//Debug.Log (gameObject.name + " " + xPos +  " " + yPos);
 
 		transform.localPosition = new Vector3 (xPos, yPos, transform.position.z);
-
-		//For Alien Bonus Slow Down
-		bonusAlien = GameObject.FindWithTag ("Alien").GetComponent<AlienCollector> ();
 	}
 
 	void FixedUpdate(){
@@ -45,9 +38,6 @@ public class Orbit : MonoBehaviour {
 			transform.RotateAround (Parent.transform.position, zAxis, solarFlare.flareSpeedRate * speed * Time.deltaTime);
 		} else {
 			transform.RotateAround (Parent.transform.position, zAxis, speed * Time.deltaTime);
-		}
-		if (bonusAlien.collected) {
-			transform.RotateAround (Parent.transform.position, zAxis, bonusAlien.bonusSpeedRate * speed * Time.deltaTime);
 		}
 	}
 
