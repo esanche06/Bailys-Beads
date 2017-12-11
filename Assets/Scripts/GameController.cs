@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour {
 		score = 0;
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         highScoreText.text = "H i g h   S c o r e : " + highScore;
+        scoreText.text = "S c o r e : " + score;
         level = 1;
         TimeLimit = (100 / level); //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
         timeLeftText.text = "Time  Left : " + (int)TimeLimit;
@@ -143,15 +144,11 @@ public class GameController : MonoBehaviour {
 	{
 		int multiplier = 100*level*level;
 		score = multiplier * (int) timeLeft ;
-        if (!flashEnded)
-        {
-            score += 1000 * level;
-        }
+        //if (!flashEnded)
+        //{
+        //    score += 1000 * level;
+        //}
 		scoreText.text = "S c o r e : " + score;
-		level += 1;
-        startTime = DateTime.Now;
-        TimeLimit = (100 / level) + 5; //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
-
         if (score > highScore)
         {
             highScore = score;
@@ -159,6 +156,12 @@ public class GameController : MonoBehaviour {
             PlayerPrefs.SetInt(highScoreKey, score);
             PlayerPrefs.Save();
         }
+
+        level += 1;
+        startTime = DateTime.Now;
+        TimeLimit = (100 / level) + 5; //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
+
+        
     }
 
 }
