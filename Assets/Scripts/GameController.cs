@@ -142,11 +142,11 @@ public class GameController : MonoBehaviour {
 	void updateScore()
 	{
 		int multiplier = 100*level*level;
-		score +=  multiplier * (int) timeLeft ;
-        //if (!flashEnded)
-        //{
-        //    score += 1000 * level;
-        //}
+		score +=  multiplier * (int)(TimeLimit - timeLeft);
+        if (!flashEnded)
+        {
+            score += 1000 * level;
+        }
 		scoreText.text = "S c o r e : " + score;
         if (score > highScore)
         {
@@ -161,6 +161,20 @@ public class GameController : MonoBehaviour {
         TimeLimit = (100 / level) + 5; //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
 
         
+    }
+
+    public void updateScoreForAsteroidSwipe()
+    {
+        score += level * 5;
+        scoreText.text = "S c o r e : " + score;
+        if (score > highScore)
+        {
+            highScore = score;
+            highScoreText.text = "H i g h   S c o r e : " + highScore;
+            PlayerPrefs.SetInt(highScoreKey, highScore);
+            PlayerPrefs.Save();
+        }
+
     }
 
 }

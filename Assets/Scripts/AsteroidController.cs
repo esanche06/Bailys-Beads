@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AsteroidController : MonoBehaviour {
 	private GameObject target;
 	private Animator anim;
@@ -50,7 +51,9 @@ public class AsteroidController : MonoBehaviour {
 				direction = startPos - endPos;
 
 				GetComponent<Rigidbody2D> ().AddForce (-direction / timeInterval * throwForce);
-			}
+                GameController.GetComponent<GameController>().updateScoreForAsteroidSwipe();
+
+            }
 		}
 	}
 
