@@ -37,7 +37,6 @@ public class GameController : MonoBehaviour {
 		score = 0;
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         highScoreText.text = "H i g h   S c o r e : " + highScore;
-        scoreText.text = "S c o r e : " + score;
         level = 1;
         TimeLimit = (100 / level); //Adding 5 secs of cusion time in case the 100/level leads to very less time like 2 seconds or something. 
         timeLeftText.text = "Time  Left : " + (int)TimeLimit;
@@ -153,7 +152,7 @@ public class GameController : MonoBehaviour {
         {
             highScore = score;
             highScoreText.text = "H i g h   S c o r e : " + highScore;
-            PlayerPrefs.SetInt(highScoreKey, score);
+            PlayerPrefs.SetInt(highScoreKey, highScore);
             PlayerPrefs.Save();
         }
 
