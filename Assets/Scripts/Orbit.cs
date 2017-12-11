@@ -46,7 +46,6 @@ public class Orbit : MonoBehaviour {
 		} else {
 			transform.RotateAround (Parent.transform.position, zAxis, speed * Time.deltaTime);
 		}
-
 		if (bonusAlien.collected) {
 			transform.RotateAround (Parent.transform.position, zAxis, bonusAlien.bonusSpeedRate * speed * Time.deltaTime);
 		}
