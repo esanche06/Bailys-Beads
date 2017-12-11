@@ -25,6 +25,7 @@ public class AlienCollector : MonoBehaviour {
 
 		if (collected) {
 			timeSinceCollected += Time.deltaTime;
+			bonusSpeedRate = 0.3f;
 		}
 
 		if (timeSinceCollected > 5f) {
@@ -36,7 +37,6 @@ public class AlienCollector : MonoBehaviour {
 	void checkForTouch () {
 		if (Input.GetMouseButtonDown (0) &&
 		    (GetComponent<Collider2D> () == Physics2D.OverlapPoint (c.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 80f)))))
-			bonusSpeedRate = 0.3f;
 			collected = true;
 			Debug.Log ("Alien is clicked.");
 	}
