@@ -142,7 +142,7 @@ public class GameController : MonoBehaviour {
 	void updateScore()
 	{
 		int multiplier = 100*level*level;
-		score = multiplier * (int) timeLeft ;
+		score +=  multiplier * (int) timeLeft ;
         //if (!flashEnded)
         //{
         //    score += 1000 * level;
